@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
 
 function App() {
+  const [image, setImage] = useState('');
+
+  const onChangeImage = function (event) {
+    setImage(event.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <select onChange={onChangeImage}>
+        <option value="fire">Casa en llamas</option>
+        <option value="futurama">Futurama</option>
+        <option value="history">Aliens</option>
+        <option value="matrix">Matrix</option>
+        <option value="philosoraptor">Philosoraptor</option>
+        <option value="smart">Smart Guy</option>
+      </select>
+
+      <div>
+        <img src={"/img/" + image + ".jpg"}/>
+      </div>
     </div>
   );
 }
