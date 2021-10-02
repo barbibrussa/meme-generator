@@ -32,7 +32,7 @@ function App() {
       <input onChange={onChangeInput1} type="text"/> <br/>
       <input onChange={onChangeInput2} type="text"/> <br/>
 
-      <div>
+      <div className="meme">
         <span>{input1}</span> <br/>
         <span>{input2}</span>
         <img src={"/img/" + image + ".jpg"}/>
